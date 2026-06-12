@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste tela 3</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="stories-wrapper">
+    <div class="dots-container"><div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+    <div class="stories-container" style="transform: translateX(0); transition: none;">
+      <div class="story story-3 active">
+        <div class="story-background"></div>
+        <div class="story-content special-message-content">
+          <div class="special-message-card lyrics-card" aria-label="Mensagem em formato de letra">
+            <div class="lyrics-header"><span class="lyrics-kicker">Nossa letra</span></div>
+            <div class="lyrics-window" id="specialMessageFull">
+              <div class="lyrics-preview">
+                <p>Você mudou completamente a forma como eu enxergava o amor.</p>
+                <p>Antes de você, eu achava que o amor estava nas grandes promessas e nas palavras certas.</p>
+                <p>Mas, com você, eu vi que ele está nas escolhas diárias, na presença e no cuidado.</p>
+              </div>
+              <div class="lyrics-full-text">
+                <p>Você mudou completamente a forma como eu enxergava o amor.</p>
+                <p>Antes de você, eu achava que o amor estava nas grandes promessas e nas palavras certas.</p>
+                <p>Mas, com você, eu vi que ele está nas escolhas diárias, na presença e no cuidado.</p>
+                <p>Até nas discussões, no silêncio depois delas e no jeito que a gente sempre encontra um caminho de volta.</p>
+                <p>Eu amo a nossa história porque ela é nossa, com todos os detalhes, risadas, saudades e planos.</p>
+                <p>Você é meu lugar bonito no mundo.</p>
+              </div>
+            </div>
+            <button class="expand-message-btn" id="expandMessageBtn" aria-expanded="false">Mostrar letra</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+  <script>
+    window.addEventListener('load', () => {
+      const btn = document.getElementById('expandMessageBtn');
+      const win = document.getElementById('specialMessageFull');
+      btn.click();
+      setTimeout(() => {
+        win.scrollTop = win.scrollHeight;
+        setTimeout(() => {
+          btn.click();
+          setTimeout(() => {
+            document.body.dataset.scrollTopAfterCollapse = String(win.scrollTop);
+          }, 120);
+        }, 120);
+      }, 120);
+    });
+  </script>
+</body>
+</html>

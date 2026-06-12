@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnóstico tela 4</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="stories-wrapper">
+    <div class="dots-container"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot active"></div></div>
+    <div class="stories-container" style="transform: translateX(0); transition: none;">
+      <div class="story story-4 active hours-animate">
+        <div class="story-background"></div>
+        <div class="story-content hours-together-content">
+          <div class="hours-together-overlay"></div>
+          <div class="hours-together-stars" aria-hidden="true"></div>
+          <div class="hours-crawl-stage" aria-hidden="true">
+            <div class="hours-crawl-track">
+              <span data-hours-copy>24.000</span><span data-hours-copy>24.000</span><span data-hours-copy>24.000</span><span data-hours-copy>24.000</span><span data-hours-copy>24.000</span><span data-hours-copy>24.000</span><span data-hours-copy>24.000</span><span data-hours-copy>24.000</span>
+            </div>
+          </div>
+          <div class="hours-together-center">
+            <p class="hours-together-label">Horas juntos</p>
+            <p class="hours-together-value" id="hoursTogetherValue">24.000</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <pre id="diagnostic" style="position:absolute;z-index:9999;left:0;top:40px;background:#fff;color:#000;font:12px monospace;white-space:pre-wrap"></pre>
+  <script>
+    setTimeout(() => {
+      const center = document.querySelector('.hours-together-center');
+      const content = document.querySelector('.hours-together-content');
+      const cs = getComputedStyle(center);
+      const cr = center.getBoundingClientRect();
+      const csr = content.getBoundingClientRect();
+      document.getElementById('diagnostic').textContent = JSON.stringify({
+        centerOpacity: cs.opacity,
+        centerDisplay: cs.display,
+        centerVisibility: cs.visibility,
+        centerTransform: cs.transform,
+        centerAnimation: cs.animation,
+        centerRect: {x: cr.x, y: cr.y, w: cr.width, h: cr.height},
+        contentRect: {x: csr.x, y: csr.y, w: csr.width, h: csr.height}
+      }, null, 2);
+    }, 6500);
+  </script>
+</body>
+</html>

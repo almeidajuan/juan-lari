@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa História - Dia dos Namorados</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation dots -->
+        <div class="dots-container">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span>
+            <span class="dot" data-index="4"></span>
+            <span class="dot" data-index="5"></span>
+        </div>
+
+        <!-- Stories Carousel -->
+        <div class="stories-wrapper">
+            <div class="stories-container">
+                
+                <!-- Story 1: Music Player -->
+                <div class="story story-1">
+                    <div class="story-background"></div>
+                    <div class="story-content music-player-content">
+                        <div class="spotify-topbar" aria-label="Cabeçalho do player">
+                            <button class="spotify-icon-btn" type="button" aria-label="Minimizar player">⌄</button>
+                            <div class="spotify-playlist-label">
+                                <span>Tocando da playlist</span>
+                                <strong>Para o meu grande amor</strong>
+                            </div>
+                            <button class="spotify-icon-btn" type="button" aria-label="Mais opções">⋮</button>
+                        </div>
+
+                        <div class="album-container">
+                            <div class="album-glow"></div>
+                            <div class="album-art">
+                                <img src="assets/capa_album.jpeg" alt="Capa do Álbum">
+                            </div>
+                        </div>
+
+                        <p class="dedication-line">A trilha sonora da nossa história.</p>
+
+                        <div class="song-info-row">
+                            <div class="song-info">
+                                <h1>Pequena Flor</h1>
+                                <p>Gabriel Elias | Acústico</p>
+                            </div>
+                            <div class="song-actions" aria-label="Ações da música">
+                                <button class="song-action-btn" type="button" aria-label="Favoritar música">♡</button>
+                                <button class="song-action-btn" type="button" aria-label="Adicionar música">＋</button>
+                            </div>
+                        </div>
+
+                        <div class="player-controls">
+                            <div class="progress-container">
+                                <div class="progress-bar" aria-label="Linha do tempo da música">
+                                    <div class="progress-fill"></div>
+                                    <div class="progress-handle"></div>
+                                </div>
+                                <div class="time-row">
+                                    <span class="time current-time">0:00</span>
+                                    <span class="time duration-time">0:00</span>
+                                </div>
+                            </div>
+
+                            <div class="controls-buttons">
+                                <button class="control-btn shuffle-btn" type="button" aria-label="Modo aleatório">⤨</button>
+                                <button class="control-btn prev-btn" type="button" aria-label="Reiniciar música">
+                                    <span>◀◀</span>
+                                </button>
+                                <button class="control-btn play-btn" id="playBtn" type="button" aria-label="Tocar ou pausar música">
+                                    <span>▶</span>
+                                </button>
+                                <button class="control-btn next-btn" type="button" aria-label="Pular música">
+                                    <span>▶▶</span>
+                                </button>
+                                <button class="control-btn repeat-btn" type="button" aria-label="Repetir música">▢</button>
+                            </div>
+
+                            <div class="spotify-footer-actions">
+                                <span class="footer-device">▯◉</span>
+                                <div class="footer-right-actions">
+                                    <span>⌯</span>
+                                    <span>☰</span>
+                                </div>
+                            </div>
+
+                            <div class="volume-container">
+                                <span>Volume</span>
+                                <input type="range" min="0" max="100" value="70" class="volume-slider">
+                            </div>
+                        </div>
+
+                        <audio id="audioPlayer" src="assets/musica_tema.mp3"></audio>
+                    </div>
+                </div>
+
+                <!-- Story 2: Relationship Counter -->
+                <div class="story story-2">
+                    <div class="story-background"></div>
+                    <div class="story-content relationship-content">
+                        <div class="relationship-topbar" aria-label="Cabeçalho da história do casal">
+                            <span class="relationship-kicker">Nossa história</span>
+                            <h2>Sobre o casal</h2>
+                            <p class="relationship-date-pill">Desde 08/08/2023</p>
+                        </div>
+
+                        <div class="relationship-photo-card">
+                            <div class="relationship-photo-glow"></div>
+                            <div class="relationship-photo">
+                                <img src="assets/image2.jpeg" alt="Foto do casal">
+                            </div>
+                        </div>
+
+                        <div class="relationship-counter-panel">
+                            <p class="counter-title">Tempo juntos</p>
+                            <div class="relationship-counter">
+                                <div class="counter-row">
+                                    <div class="counter-box">
+                                        <span class="counter-value" id="counterYears">0</span>
+                                        <span class="counter-label">anos</span>
+                                    </div>
+                                    <div class="counter-box">
+                                        <span class="counter-value" id="counterMonths">0</span>
+                                        <span class="counter-label">meses</span>
+                                    </div>
+                                    <div class="counter-box">
+                                        <span class="counter-value" id="counterDays">0</span>
+                                        <span class="counter-label">dias</span>
+                                    </div>
+                                </div>
+
+                                <div class="counter-row">
+                                    <div class="counter-box">
+                                        <span class="counter-value" id="counterHours">0</span>
+                                        <span class="counter-label">horas</span>
+                                    </div>
+                                    <div class="counter-box">
+                                        <span class="counter-value" id="counterMinutes">0</span>
+                                        <span class="counter-label">minutos</span>
+                                    </div>
+                                    <div class="counter-box">
+                                        <span class="counter-value" id="counterSeconds">0</span>
+                                        <span class="counter-label">segundos</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story 3: Special Message -->
+                <div class="story story-3">
+                    <div class="story-background"></div>
+                    <div class="story-content special-message-content">
+                        <div class="special-message-card lyrics-card" aria-label="Prévia da mensagem em formato de letra">
+                            <div class="lyrics-header">
+                                <span class="lyrics-kicker">Nossa letra</span>
+                            </div>
+
+                            <div class="lyrics-window" id="specialMessageFull">
+                                <div class="lyrics-preview">
+                                    <p>Você mudou completamente a forma como eu enxergava o amor.</p>
+                                    <p>Antes de você, eu achava que o amor estava nas grandes promessas e nas palavras certas.</p>
+                                    <p>Mas, com você, eu vi que ele está nas escolhas diárias, na presença e no cuidado.</p>
+                                </div>
+
+                                <div class="lyrics-full-text">
+                                    <p>Até nas discussões bobas que terminam me dando ainda mais certeza de que é você quem eu quero ao meu lado.</p>
+                                    <p>E, mesmo que o seu jeitinho estressado apareça de vez em quando, eu aprendi que ele tem a mesma intensidade da forma como você ama.</p>
+                                    <p>É tudo isso que faz você ser tão especial para mim.</p>
+                                    <p class="signature-message">Minha Pequena Flor.</p>
+                                </div>
+                            </div>
+
+                            <button class="expand-message-btn" id="expandMessageBtn" type="button" aria-expanded="false" aria-controls="specialMessageFull">
+                                Mostrar letra
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story 4: Hours Together -->
+                <div class="story story-4">
+                    <div class="story-background"></div>
+                    <div class="story-content hours-together-content">
+                        <div class="hours-together-overlay"></div>
+                        <div class="hours-together-stars" aria-hidden="true"></div>
+                        <div class="hours-crawl-stage" aria-hidden="true">
+                            <div class="hours-crawl-track">
+                                <span data-hours-copy>0</span>
+                                <span data-hours-copy>0</span>
+                                <span data-hours-copy>0</span>
+                                <span data-hours-copy>0</span>
+                                <span data-hours-copy>0</span>
+                                <span data-hours-copy>0</span>
+                                <span data-hours-copy>0</span>
+                                <span data-hours-copy>0</span>
+                            </div>
+                        </div>
+                        <div class="hours-together-center">
+                            <p class="hours-together-label">Horas juntos</p>
+                            <p class="hours-together-value" id="hoursTogetherValue">0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story 5: Timeline Moments -->
+                <div class="story story-5">
+                    <div class="story-background"></div>
+                    <div class="story-content timeline-content">
+                        <div class="timeline-stars" aria-hidden="true"></div>
+                        <div class="timeline-scroll" aria-label="Linha do tempo dos nossos momentos">
+                            <header class="timeline-hero">
+                                <span class="timeline-kicker">Nossa linha do tempo</span>
+                                <h2>Nossos momentos</h2>
+                                <p>Momentos que nos trouxeram até aqui.</p>
+                            </header>
+
+                            <div class="timeline-list">
+                                <article class="timeline-item item-left">
+                                    <div class="timeline-photo polaroid tilt-left"><img src="assets/timeline/mobile/imagem-1.webp" alt="Primeiro passeio do casal" loading="lazy"></div>
+                                    <div class="timeline-point"><span>♥</span></div>
+                                    <p class="timeline-caption">Primeiro passeio</p>
+                                </article>
+                                <article class="timeline-item item-right">
+                                    <p class="timeline-caption">Primeiro banho de igarapé</p>
+                                    <div class="timeline-point"><span>♥</span></div>
+                                    <div class="timeline-photo polaroid tilt-right"><img src="assets/timeline/mobile/imagem-2.webp" alt="Primeiro banho de igarapé do casal" loading="lazy"></div>
+                                </article>
+                                <article class="timeline-item item-left">
+                                    <div class="timeline-photo polaroid tilt-right"><img src="assets/timeline/mobile/imagem-3.webp" alt="Segundo passeio do casal" loading="lazy"></div>
+                                    <div class="timeline-point"><span>♥</span></div>
+                                    <p class="timeline-caption">Segundo passeio</p>
+                                </article>
+                                <article class="timeline-item item-right">
+                                    <p class="timeline-caption">Viagem à praia</p>
+                                    <div class="timeline-point"><span>♥</span></div>
+                                    <div class="timeline-photo polaroid tilt-left"><img src="assets/timeline/mobile/imagem-4.webp" alt="Viagem à praia do casal" loading="lazy"></div>
+                                </article>
+                                <article class="timeline-item item-left">
+                                    <div class="timeline-photo polaroid tilt-left"><img src="assets/timeline/mobile/imagem-5.webp" alt="Mais um dia de praia do casal" loading="lazy"></div>
+                                    <div class="timeline-point"><span>♥</span></div>
+                                    <p class="timeline-caption">Mais um dia de praia</p>
+                                </article>
+                                <article class="timeline-item item-right">
+                                    <p class="timeline-caption">Praia de novo? Claro.</p>
+                                    <div class="timeline-point"><span>♥</span></div>
+                                    <div class="timeline-photo polaroid tilt-right"><img src="assets/timeline/mobile/imagem-6.webp" alt="Brincadeira em mais um momento de praia" loading="lazy"></div>
+                                </article>
+                                <article class="timeline-item item-left">
+                                    <div class="timeline-photo polaroid tilt-right"><img src="assets/timeline/mobile/imagem-7.webp" alt="Momento de cinema" loading="lazy"></div>
+                                    <div class="timeline-point"><span>♥</span></div>
+                                    <p class="timeline-caption">Nosso momento de cinema</p>
+                                </article>
+                                <article class="timeline-item item-right">
+                                    <p class="timeline-caption">Outra praia, outro sorriso</p>
+                                    <div class="timeline-point"><span>♥</span></div>
+                                    <div class="timeline-photo polaroid tilt-left"><img src="assets/timeline/mobile/imagem-8.webp" alt="Outro momento de praia do casal" loading="lazy"></div>
+                                </article>
+                                <article class="timeline-item item-left">
+                                    <div class="timeline-photo polaroid tilt-left"><img src="assets/timeline/mobile/imagem-9.webp" alt="Momento divertido com açaí" loading="lazy"></div>
+                                    <div class="timeline-point"><span>♥</span></div>
+                                    <p class="timeline-caption">Fome de açaí e de risadas</p>
+                                </article>
+                                <article class="timeline-item item-right">
+                                    <p class="timeline-caption">Nos seus momentos de conquista</p>
+                                    <div class="timeline-point"><span>♥</span></div>
+                                    <div class="timeline-photo polaroid tilt-right"><img src="assets/timeline/mobile/imagem-10.webp" alt="Cerimônia do jaleco" loading="lazy"></div>
+                                </article>
+                                <article class="timeline-item item-left">
+                                    <div class="timeline-photo polaroid tilt-right"><img src="assets/timeline/mobile/imagem-11.webp" alt="Primeiro gatinho do casal" loading="lazy"></div>
+                                    <div class="timeline-point"><span>♥</span></div>
+                                    <p class="timeline-caption">Nosso primeiro filho</p>
+                                </article>
+                                <article class="timeline-item item-right">
+                                    <p class="timeline-caption">Dormindo com nosso bebê</p>
+                                    <div class="timeline-point"><span>♥</span></div>
+                                    <div class="timeline-photo polaroid tilt-left"><img src="assets/timeline/mobile/imagem-12.webp" alt="Momento dormindo com o gatinho" loading="lazy"></div>
+                                </article>
+                                <article class="timeline-item item-left">
+                                    <div class="timeline-photo polaroid tilt-left"><img src="assets/timeline/mobile/imagem-13.webp" alt="Filho postiço do casal" loading="lazy"></div>
+                                    <div class="timeline-point"><span>♥</span></div>
+                                    <p class="timeline-caption">Nosso filho postiço</p>
+                                </article>
+                            </div>
+
+                            <footer class="timeline-ending">
+                                <p>Todos esses momentos nos trouxeram até aqui!</p>
+                                <strong>E eu fico muito feliz em saber que ainda viverei muitos outros momentos como esses ao seu lado.</strong>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story 6: Final Wrapped -->
+                <div class="story story-6">
+                    <div class="story-background"></div>
+                    <div class="story-content final-content">
+                        <div class="final-stars" aria-hidden="true"></div>
+                        <div class="final-wrap">
+                            <div class="final-photo-wrap">
+                                <div class="final-photo-glow"></div>
+                                <img src="assets/final/foto-final-mobile.webp" alt="Foto final de Juan e Lari" class="final-photo">
+                            </div>
+
+                            <header class="final-header">
+                                <h2>Nossa Conexão</h2>
+                                <p>Juan &amp; Lari</p>
+                            </header>
+
+                            <section class="final-card final-season-card">
+                                <p>O nosso amor começou no <strong>Inverno</strong> e já durou <strong>11 estações</strong></p>
+                            </section>
+
+                            <section class="final-card final-dates-card" aria-label="Datas especiais do casal">
+                                <div class="final-dates-content">
+                                    <div class="final-card-icon" aria-hidden="true"></div>
+                                    <span>Datas especiais</span>
+                                    <div class="final-date-row">
+                                        <strong>08 de Agosto</strong>
+                                        <small>Quando a gente se viu pela primeira vez</small>
+                                    </div>
+                                    <div class="final-date-row">
+                                        <strong>08 de Dezembro</strong>
+                                        <small>O pedido de namoro</small>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="final-days" aria-label="Total de dias juntos">
+                                <span>Total de dias juntos</span>
+                                <div class="final-days-number">
+                                    <strong id="finalDaysTogether">0</strong>
+                                    <em>dias</em>
+                                </div>
+                            </section>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-lightbox" id="timelineLightbox" aria-hidden="true" role="dialog" aria-label="Imagem ampliada da linha do tempo">
+            <button class="timeline-lightbox-close" type="button" aria-label="Fechar imagem ampliada">×</button>
+            <div class="timeline-lightbox-frame">
+                <img id="timelineLightboxImage" src="" alt="">
+                <p id="timelineLightboxCaption"></p>
+            </div>
+            <p class="timeline-lightbox-hint">Toque na imagem ou fora dela para voltar</p>
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

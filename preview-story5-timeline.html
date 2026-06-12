@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prévia Tela 5 — Nossos momentos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="dots-container">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot active"></span>
+        </div>
+        <div class="stories-wrapper">
+            <div class="stories-container">
+                <div class="story story-5">
+                    <div class="story-background"></div>
+                    <div class="story-content timeline-content">
+                        <div class="timeline-stars" aria-hidden="true"></div>
+                        <div class="timeline-scroll" aria-label="Linha do tempo dos nossos momentos">
+                            <header class="timeline-hero">
+                                <span class="timeline-kicker">Nossa linha do tempo</span>
+                                <h2>Nossos momentos</h2>
+                                <p>Momentos que nos trouxeram até aqui.</p>
+                            </header>
+                            <div class="timeline-list">
+                                <article class="timeline-item item-left"><div class="timeline-photo polaroid tilt-left"><img src="assets/timeline/mobile/imagem-1.webp" alt="Primeiro passeio do casal"></div><div class="timeline-point"><span>♥</span></div><p class="timeline-caption">Primeiro passeio</p></article>
+                                <article class="timeline-item item-right"><p class="timeline-caption">Primeiro banho de igarapé</p><div class="timeline-point"><span>♥</span></div><div class="timeline-photo polaroid tilt-right"><img src="assets/timeline/mobile/imagem-2.webp" alt="Primeiro banho de igarapé do casal"></div></article>
+                                <article class="timeline-item item-left"><div class="timeline-photo polaroid tilt-right"><img src="assets/timeline/mobile/imagem-3.webp" alt="Segundo passeio do casal"></div><div class="timeline-point"><span>♥</span></div><p class="timeline-caption">Segundo passeio</p></article>
+                                <article class="timeline-item item-right"><p class="timeline-caption">Viagem à praia</p><div class="timeline-point"><span>♥</span></div><div class="timeline-photo polaroid tilt-left"><img src="assets/timeline/mobile/imagem-4.webp" alt="Viagem à praia do casal"></div></article>
+                                <article class="timeline-item item-left"><div class="timeline-photo polaroid tilt-left"><img src="assets/timeline/mobile/imagem-5.webp" alt="Mais um dia de praia do casal"></div><div class="timeline-point"><span>♥</span></div><p class="timeline-caption">Mais um dia de praia</p></article>
+                                <article class="timeline-item item-right"><p class="timeline-caption">Praia de novo? Claro.</p><div class="timeline-point"><span>♥</span></div><div class="timeline-photo polaroid tilt-right"><img src="assets/timeline/mobile/imagem-6.webp" alt="Brincadeira em mais um momento de praia"></div></article>
+                                <article class="timeline-item item-left"><div class="timeline-photo polaroid tilt-right"><img src="assets/timeline/mobile/imagem-7.webp" alt="Momento de cinema"></div><div class="timeline-point"><span>♥</span></div><p class="timeline-caption">Nosso momento de cinema</p></article>
+                                <article class="timeline-item item-right"><p class="timeline-caption">Outra praia, outro sorriso</p><div class="timeline-point"><span>♥</span></div><div class="timeline-photo polaroid tilt-left"><img src="assets/timeline/mobile/imagem-8.webp" alt="Outro momento de praia do casal"></div></article>
+                                <article class="timeline-item item-left"><div class="timeline-photo polaroid tilt-left"><img src="assets/timeline/mobile/imagem-9.webp" alt="Momento divertido com açaí"></div><div class="timeline-point"><span>♥</span></div><p class="timeline-caption">Fome de açaí e de risadas</p></article>
+                                <article class="timeline-item item-right"><p class="timeline-caption">Nos seus momentos de conquista</p><div class="timeline-point"><span>♥</span></div><div class="timeline-photo polaroid tilt-right"><img src="assets/timeline/mobile/imagem-10.webp" alt="Cerimônia do jaleco"></div></article>
+                                <article class="timeline-item item-left"><div class="timeline-photo polaroid tilt-right"><img src="assets/timeline/mobile/imagem-11.webp" alt="Primeiro gatinho do casal"></div><div class="timeline-point"><span>♥</span></div><p class="timeline-caption">Nosso primeiro filho</p></article>
+                                <article class="timeline-item item-right"><p class="timeline-caption">Dormindo com nosso bebê</p><div class="timeline-point"><span>♥</span></div><div class="timeline-photo polaroid tilt-left"><img src="assets/timeline/mobile/imagem-12.webp" alt="Momento dormindo com o gatinho"></div></article>
+                                <article class="timeline-item item-left"><div class="timeline-photo polaroid tilt-left"><img src="assets/timeline/mobile/imagem-13.webp" alt="Filho postiço do casal"></div><div class="timeline-point"><span>♥</span></div><p class="timeline-caption">Nosso filho postiço</p></article>
+                            </div>
+                            <footer class="timeline-ending"><p>Todos esses momentos nos trouxeram até aqui.</p><strong>E o mais bonito é saber que ainda existem muitos outros esperando por nós.</strong></footer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('load', () => {
+            const params = new URLSearchParams(window.location.search);
+            const position = params.get('capture');
+            const scrollArea = document.querySelector('.timeline-scroll');
+            if (!scrollArea || !position) return;
+            setTimeout(() => {
+                if (position === 'mid') {
+                    scrollArea.scrollTop = Math.round(scrollArea.scrollHeight * 0.48);
+                }
+                if (position === 'bottom') {
+                    scrollArea.scrollTop = scrollArea.scrollHeight;
+                }
+            }, 250);
+        });
+    </script>
+</body>
+</html>

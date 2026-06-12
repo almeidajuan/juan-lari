@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste tela 4</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="stories-wrapper">
+    <div class="dots-container"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot active"></div></div>
+    <div class="stories-container" style="transform: translateX(0); transition: none;">
+      <div class="story story-4 active hours-animate">
+        <div class="story-background"></div>
+        <div class="story-content hours-together-content">
+          <div class="hours-together-overlay"></div>
+          <div class="hours-together-stars" aria-hidden="true"></div>
+          <div class="hours-crawl-stage" aria-hidden="true">
+            <div class="hours-crawl-track">
+              <span data-hours-copy>24.000</span><span data-hours-copy>24.000</span><span data-hours-copy>24.000</span><span data-hours-copy>24.000</span><span data-hours-copy>24.000</span><span data-hours-copy>24.000</span><span data-hours-copy>24.000</span><span data-hours-copy>24.000</span>
+            </div>
+          </div>
+          <div class="hours-together-center">
+            <p class="hours-together-label">Horas juntos</p>
+            <p class="hours-together-value" id="hoursTogetherValue">24.000</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    setTimeout(() => {
+      document.querySelector('.story-4')?.classList.add('hours-complete');
+    }, 5600);
+  </script>
+</body>
+</html>
