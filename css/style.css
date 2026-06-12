@@ -364,7 +364,8 @@ body {
     display: none;
 }
 
-.special-message-card.expanded {
+.special-message-card.expanded,
+.story-3 .lyrics-card.expanded {
     max-height: 85vh !important;
 }
 
@@ -1335,14 +1336,15 @@ body {
 
 .story-3 .lyrics-card {
     width: min(100%, 520px);
-    min-height: min(78vh, 690px);
-    max-height: calc(100vh - 74px);
+    min-height: 0 !important;
+    max-height: 320px !important;
     margin: 0 auto;
     padding: clamp(26px, 7vw, 38px) clamp(22px, 7vw, 36px) clamp(22px, 6vw, 30px);
     border-radius: 34px;
     display: flex;
     flex-direction: column;
     gap: clamp(22px, 4vh, 36px);
+    flex: 0 0 auto !important;
     background:
         radial-gradient(circle at 22% 20%, rgba(143, 153, 236, 0.36) 0%, rgba(143, 153, 236, 0) 38%),
         linear-gradient(145deg, rgba(83, 91, 165, 0.98) 0%, rgba(62, 68, 143, 0.97) 54%, rgba(72, 81, 154, 0.97) 100%);
@@ -1515,9 +1517,9 @@ body {
         font-size: clamp(1.76rem, 8.15vw, 2.48rem);
     }
 
-    .story-3 .special-message-card.expanded .lyrics-window {
-        max-height: calc(100vh - 218px);
-    }
+.story-3 .special-message-card.expanded .lyrics-window {
+    max-height: 60vh;
+}
 }
 
 @media (max-width: 400px) {
