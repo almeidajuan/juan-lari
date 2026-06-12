@@ -2838,13 +2838,20 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-bottom: 4px; /* Ajuste fino para centralizar verticalmente o caractere ‹ › */
     cursor: pointer;
     z-index: 40;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     user-select: none;
     -webkit-tap-highlight-color: transparent;
+}
+
+.nav-arrow.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
 
 .nav-arrow:hover {

@@ -443,6 +443,26 @@ function updateStories() {
     closeTimelineLightbox();
     isAnimating = true;
 
+    // Update arrows visibility
+    const prevArrow = document.getElementById('prevArrow');
+    const nextArrow = document.getElementById('nextArrow');
+    
+    if (prevArrow) {
+        if (currentIndex === 0) {
+            prevArrow.classList.add('hidden');
+        } else {
+            prevArrow.classList.remove('hidden');
+        }
+    }
+    
+    if (nextArrow) {
+        if (currentIndex === totalStories - 1) {
+            nextArrow.classList.add('hidden');
+        } else {
+            nextArrow.classList.remove('hidden');
+        }
+    }
+
     // Update carousel position
     const translateValue = -currentIndex * 100;
     storiesContainer.style.transform = `translateX(${translateValue}%)`;
