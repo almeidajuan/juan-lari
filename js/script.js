@@ -77,6 +77,13 @@ function initializeEventListeners() {
         expandMessageBtn.addEventListener('click', toggleSpecialMessage);
     }
 
+    // Nav Arrows
+    const prevArrow = document.getElementById('prevArrow');
+    const nextArrow = document.getElementById('nextArrow');
+
+    if (prevArrow) prevArrow.addEventListener('click', previousStory);
+    if (nextArrow) nextArrow.addEventListener('click', nextStory);
+
     initializeTimelineLightbox();
 }
 
@@ -330,35 +337,24 @@ function handleSongEnd() {
     audioPlayer.currentTime = 0;
 }
 
-// Touch Handlers
+// Touch Handlers (Swipe desativado temporariamente)
 function handleTouchStart(e) {
-    // Don't swipe if interacting with player
-    if (e.target.closest('.player-controls') || e.target.closest('.expand-message-btn') || e.target.closest('.timeline-lightbox')) {
-        return;
-    }
-    startX = e.touches[0].clientX;
+    // startX = e.touches[0].clientX;
 }
 
 function handleTouchEnd(e) {
-    if (startX === 0) return; // Wasn't a touch on stories
-    endX = e.changedTouches[0].clientX;
-    handleSwipe();
+    // endX = e.changedTouches[0].clientX;
+    // handleSwipe();
 }
 
-// Mouse Handlers (for testing on desktop)
+// Mouse Handlers (Swipe desativado temporariamente)
 function handleMouseDown(e) {
-    // Only on container area and not on player controls
-    if (e.target.closest('.stories-wrapper') && !e.target.closest('.player-controls') && !e.target.closest('.expand-message-btn') && !e.target.closest('.timeline-lightbox')) {
-        startX = e.clientX;
-    }
+    // startX = e.clientX;
 }
 
 function handleMouseUp(e) {
-    if (e.target.closest('.stories-wrapper') && startX !== 0 && !e.target.closest('.player-controls') && !e.target.closest('.expand-message-btn') && !e.target.closest('.timeline-lightbox')) {
-        endX = e.clientX;
-        handleSwipe();
-        startX = 0;
-    }
+    // endX = e.clientX;
+    // handleSwipe();
 }
 
 function handleStorySideClick(e) {

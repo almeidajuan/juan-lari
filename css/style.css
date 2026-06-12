@@ -2821,3 +2821,65 @@ body {
     background: rgba(255, 255, 255, 0.96);
     box-shadow: 0 5px 0 rgba(255, 255, 255, 0.72);
 }
+
+/* Navigation Arrows */
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 2.5rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 40;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.nav-arrow:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.nav-arrow:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.prev-arrow {
+    left: 10px;
+    padding-right: 4px;
+}
+
+.next-arrow {
+    right: 10px;
+    padding-left: 4px;
+}
+
+@media (max-width: 600px) {
+    .nav-arrow {
+        width: 38px;
+        height: 38px;
+        font-size: 2rem;
+        background: rgba(255, 255, 255, 0.05);
+    }
+    
+    .prev-arrow {
+        left: 5px;
+    }
+    
+    .next-arrow {
+        right: 5px;
+    }
+}
