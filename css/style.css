@@ -145,6 +145,12 @@ body {
     overflow: hidden;
 }
 
+@media (max-width: 600px) {
+    .relationship-content {
+        padding-top: calc(60px + env(safe-area-inset-top));
+    }
+}
+
 .relationship-topbar {
     text-align: center;
     animation: slideInDown 0.8s ease;
@@ -336,6 +342,13 @@ body {
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
     animation: slideInUp 0.8s ease 0.15s backwards;
+    max-height: 240px;
+    overflow: hidden;
+    transition: max-height 0.55s ease;
+}
+
+.special-message-card.expanded {
+    max-height: 800px;
 }
 
 .special-message-preview {
@@ -547,6 +560,12 @@ body {
     text-align: left;
     gap: clamp(14px, 2.5vh, 24px);
     overflow: hidden;
+}
+
+@media (max-width: 600px) {
+    .music-player-content {
+        padding-top: calc(60px + env(safe-area-inset-top));
+    }
 }
 
 .spotify-topbar {
@@ -1099,7 +1118,7 @@ body {
 /* Final mobile overrides for the Spotify-inspired first story */
 @media (max-width: 600px) {
     .story-1 .music-player-content {
-        padding: calc(30px + env(safe-area-inset-top)) 18px calc(14px + env(safe-area-inset-bottom));
+        padding: calc(60px + env(safe-area-inset-top)) 18px calc(14px + env(safe-area-inset-bottom));
         gap: clamp(12px, 2vh, 18px);
     }
 
@@ -1190,7 +1209,7 @@ body {
 /* Final mobile overrides for the Spotify-inspired second story */
 @media (max-width: 600px) {
     .story-2 .relationship-content {
-        padding: calc(32px + env(safe-area-inset-top)) 16px calc(14px + env(safe-area-inset-bottom));
+        padding: calc(60px + env(safe-area-inset-top)) 16px calc(14px + env(safe-area-inset-bottom));
         gap: clamp(12px, 2vh, 17px);
     }
 
